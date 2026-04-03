@@ -1,0 +1,34 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static StringTokenizer st;
+
+    static int N;
+    static char[] arr;
+
+    public static void main(String[] args) throws Exception {
+        N = Integer.parseInt(br.readLine());
+        arr = br.readLine().toCharArray();
+
+        long d = 0, dk = 0, dks = 0, dksh = 0;
+
+        for (int i = 0; i < N; i++) {
+            if (arr[i] == 'D') {
+                d++;
+            } else if (arr[i] == 'K') {
+                dk += d;
+            } else if (arr[i] == 'S') {
+                dks += dk;
+            } else if (arr[i] == 'H') {
+                dksh += dks;
+            }
+        }
+
+        System.out.println(dksh);
+
+    }
+
+}
